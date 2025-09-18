@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Colour With Buttons</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: black;
+            color: white;
+        }
+        .btn{
+            border: solid;
+            width: 500px;
+            height: 500px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 30px;
+            padding: 30px;
+        }
+        button{
+            border: none;
+            color: white;
+            font-weight: 800;
+            background: rgb(30, 29, 29);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">
+        <button>gray</button>
+        <button>Gold</button>
+        <button>cornflowerblue</button>
+        <button>coral</button>
+        <button>tomato</button>
+        <button>chocolate</button>
+        <button>Brown</button>
+        <button>pink</button>
+        <button>Crimson</button>
+        <button>Orange</button>
+        <button>violet</button>
+        <button>purple</button>
+        <button>green</button>
+        <button>yellow</button>
+        <button>red</button>
+    </div>
+
+    <script>
+        let button = document.querySelectorAll('button');
+        button.forEach((clr) => {
+            clr.addEventListener('click', () => {
+                clr.style.background = clr.innerText
+            })
+        });
+    </script>
+</body>
+</html>
