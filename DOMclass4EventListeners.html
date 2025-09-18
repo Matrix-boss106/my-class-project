@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring what are Events and their Work</title>
+</head>
+<body>
+    <!-- 
+        What are Events in JavaScript?
+        --------------------------------
+        Events are actions or occurrences that happen in the browser, such as clicking a button, moving the mouse, pressing a key, loading a page, etc.
+        JavaScript can "listen" for these events and run code in response.
+
+        What are Event Listeners?
+        --------------------------
+        Event listeners are functions that wait for a specific event to happen on a specific element, and then execute code when that event occurs.
+        We use addEventListener() to attach an event listener to an element.
+    -->
+
+    <h2>JavaScript Events and Event Listeners</h2>
+
+    <!-- Example 1: Click Event -->
+    <button id="btnClick">Click Me!</button>
+    <!-- Example 2: Mouseover Event -->
+    <div id="hoverDiv" style="width:150px; height:50px; background:#e0e0e0; margin-top:10px; text-align:center; line-height:50px;">
+        Hover over me!
+    </div>
+    <!-- Example 3: Keydown Event -->
+    <input id="inputKey" type="text" placeholder="Type something..." style="margin-top:10px;">
+
+    <!-- Example 4: Change Event -->
+    <select id="selectChange" style="margin-top:10px;">
+        <option value="">Choose option</option>
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+    </select>
+
+    <!-- Example 5: Load Event -->
+    <p id="loadMsg"></p>
+
+    <script>
+        // 1. Click Event
+        // Fires when the user clicks the button
+        document.getElementById('btnClick').addEventListener('click', function() {
+            alert('Button was clicked!');
+        });
+
+        // 2. Mouseover Event
+        // Fires when the mouse pointer enters the div
+        document.getElementById('hoverDiv').addEventListener('mouseover', function() {
+            this.style.background = '#b3ffd9';
+            this.textContent = 'Mouse is over me!';
+        });
+        // Mouseout Event (when mouse leaves)
+        document.getElementById('hoverDiv').addEventListener('mouseout', function() {
+            this.style.background = '#e0e0e0';
+            this.textContent = 'Hover over me!';
+        });
+
+        // 3. Keydown Event
+        // Fires when a key is pressed in the input
+        document.getElementById('inputKey').addEventListener('keydown', function(event) {
+            // event.key gives the key pressed
+            console.log('Key pressed:', event.key);
+        });
+
+        // 4. Change Event
+        // Fires when the selected option changes
+        document.getElementById('selectChange').addEventListener('change', function() {
+            alert('You selected: ' + this.value);
+        });
+
+        // 5. Load Event
+        // Fires when the page is fully loaded
+        window.addEventListener('load', function() {
+            document.getElementById('loadMsg').textContent = 'Page has fully loaded!';
+        });
+
+        /*
+            Most Commonly Used Events in JavaScript:
+            ----------------------------------------
+            1. click      - User clicks an element
+            2. dblclick   - User double-clicks an element
+            3. mouseover  - Mouse pointer moves over an element
+            4. mouseout   - Mouse pointer leaves an element
+            5. keydown    - User presses a key
+            6. keyup      - User releases a key
+            7. change     - Value of an input or select changes
+            8. input      - User types in a text field
+            9. submit     - Form is submitted
+            10. load      - Page or image finishes loading
+            11. focus     - Element (like input) gets focus
+            12. blur      - Element loses focus
+        */
+    </script>
+</body>
+</html>

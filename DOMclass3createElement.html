@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding how we dynamically Create Elements in JavaScript</title>
+</head>
+<body>
+    <script>
+    // Step 1: Create a new element using createElement
+    // Here, we create a new <div> element
+    const newDiv = document.createElement('div');
+
+    // Step 2: Assign a class to the new <div> (for styling purposes)
+    newDiv.className = 'card'; // This will help us style the card later with CSS
+
+    // Step 3: Set an attribute (like id) to the new <div>
+    newDiv.setAttribute('id', 'myCard'); // Adds id="myCard" to the div
+
+    // Step 4: Manipulate the innerText of the div
+    // innerText sets or returns the text content of the element
+    newDiv.innerText = 'This is a simple card created using JavaScript!';
+
+    // Step 5: Manipulate the innerHTML of the div
+    // innerHTML allows us to add HTML content inside the element
+    newDiv.innerHTML = `
+        <h2>Welcome to My Card</h2>
+        <p>This card was <strong>dynamically</strong> created using <code>createElement</code>.</p>
+        <button>Click Me!</button>
+    `;
+
+    // Step 6: Append the new div to the body so it appears on the page
+    document.body.appendChild(newDiv);
+
+    // Optional: Add some basic styles for the card using JavaScript for demonstration
+    const style = document.createElement('style');
+    style.innerHTML = `
+      .card {
+        max-width: 300px;
+        margin: 40px auto;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        background: #f9f9f9;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      .card h2 {
+        margin-top: 0;
+        color: #2c3e50;
+      }
+      .card button {
+        margin-top: 15px;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 6px;
+        background: #3498db;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1em;
+      }
+      .card button:hover {
+        background: #217dbb;
+      }
+    `;
+    document.head.appendChild(style);
+    </script>
+</body>
+</html>

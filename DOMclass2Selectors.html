@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Selectors in JavaScript</title>
+</head>
+<body>
+    <!-- 
+        DOM Selectors in JavaScript
+
+        DOM selectors are used to select and manipulate HTML elements using JavaScript.
+        The most common selectors are:
+        - getElementById()
+        - getElementsByClassName()
+        - getElementsByTagName()
+        - querySelector()
+        - querySelectorAll()
+    -->
+
+    <h2 id="main-title">Welcome to DOM Selectors!</h2>
+    <p class="info">This is a paragraph with class 'info'.</p>
+    <p class="info">Another paragraph with the same class.</p>
+    <ul>
+        <li>First item</li>
+        <li>Second item</li>
+    </ul>
+
+    <button onclick="changeTitle()">Change Title Color</button>
+    <button onclick="highlightInfo()">Highlight Info Paragraphs</button>
+    <button onclick="boldList()">Bold List Items</button>
+
+    <script>
+        // Select an element by ID and change its style
+        function changeTitle() {
+            // getElementById selects a single element with the given id
+            var title = document.getElementById('main-title');
+            title.style.color = 'blue'; // Change text color to blue
+        }
+
+        // Select elements by class name and change their background
+        function highlightInfo() {
+            // getElementsByClassName returns a collection of elements
+            var infoParas = document.getElementsByClassName('info');
+            for (var i = 0; i < infoParas.length; i++) {
+                infoParas[i].style.backgroundColor = 'yellow';
+            }
+        }
+
+        // Select elements by tag name and make them bold
+        function boldList() {
+            // getElementsByTagName returns all <li> elements
+            var items = document.getElementsByTagName('li');
+            for (var i = 0; i < items.length; i++) {
+                items[i].style.fontWeight = 'bold';
+            }
+        }
+
+        // You can also use querySelector and querySelectorAll for more flexible selection:
+        // document.querySelector('h2') selects the first <h2> element
+        // document.querySelectorAll('.info') selects all elements with class 'info'
+
+        let firstInfo = document.querySelector('.info');    
+        firstInfo.style.border = "2px solid red";
+        let allInfo = document.querySelectorAll('.info');
+        allInfo.forEach(item => item.style.padding = "10px");   
+        let firstItem = document.querySelector('li');
+        firstItem.style.backgroundColor = "lightgrey";
+        let allItems = document.querySelectorAll('li');
+        allItems.forEach(item => item.style.margin = "5px");
+        let mainTitle = document.querySelector('#main-title');
+        mainTitle.style.textDecoration = "underline";
+        let allParagraphs = document.querySelectorAll('p');
+        allParagraphs.forEach(item => item.style.fontSize = "18px");
+        let allListItems = document.querySelectorAll('li');
+        allListItems.forEach(item => item.style.listStyleType = "circle");
+        let button = document.querySelector('button');
+        button.style.cursor = "pointer";
+        button.style.padding = "10px 15px";
+        button.style.border = "none";
+        button.style.backgroundColor = "teal";
+        button.style.color = "white";
+        button.style.margin = "5px";
+        button.style.borderRadius = "5px";
+        button.style.fontSize = "16px";
+        button.style.fontWeight = "bold";
+        button.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+        button.style.transition = "background-color 0.3s ease";
+    </script>
+    <!-- 
+        Summary:
+        - DOM selectors allow you to select and manipulate HTML elements.
+        - Use getElementById for single elements, getElementsByClassName and getElementsByTagName for collections.
+        - querySelector and querySelectorAll provide more flexibility with CSS selectors.
+    -->
+        
+</body>
+</html>

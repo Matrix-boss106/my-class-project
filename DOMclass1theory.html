@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring DOM Consept in Theory</title>
+</head>
+<body>
+    <!-- 
+        The DOM (Document Object Model) is a programming interface for web documents.
+        It represents the page so that programs can change the document structure, style, and content.
+        The DOM represents the document as a tree of objects (nodes).
+        Each element, attribute, and piece of text in the HTML becomes a node in the DOM tree.
+        JavaScript can interact with the DOM to dynamically update the content and appearance of a web page.
+
+    -->
+
+    <h1>Understanding the DOM (Document Object Model)</h1>
+
+    <!-- Example: Selecting elements and changing their style using JavaScript -->
+
+    <p id="demo">This is a paragraph. Click the button to change my color!</p>
+
+    <script>
+        // Select the element by its ID and change its style
+        
+            // document.getElementById is a DOM selector method
+            var para = document.getElementById("demo");
+            // Changing the style property of the element
+            para.style.color = "blue";
+            para.style.background = "crimson";
+            para.style.padding = "30px";
+            para.style.fontWeight = "1000"
+        
+
+        // Other common DOM selectors:
+        // document.getElementsByClassName("className")
+        // document.getElementsByTagName("tagName")
+        // document.querySelector("cssSelector")
+        // document.querySelectorAll("cssSelector")
+    </script>
+
+    <!-- 
+        Summary:
+        - The DOM allows JavaScript to access and modify HTML elements.
+        - You can select elements using various selector methods.
+        - You can change content, attributes, and styles dynamically.
+    -->
+</body>
+</html>
