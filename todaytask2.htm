@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            border: solid;
+            width: 400px;
+            margin: 20px;
+        
+        }
+        .btn {
+            padding: 30px;
+            width: 100px;
+
+        }
+
+        button {
+            cursor: pointer;
+            border-radius: 50px;
+            border: none;
+            margin: 50px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <button class="btn">Red</button>
+        <button class="btn">Green</button>
+        <button class="btn">Yellow</button>
+        <button class="btn">Blue</button>
+        <button class="btn">Purple</button>
+        <button class="btn">Pink</button>
+        <script>
+
+            let btn = document.querySelectorAll("button")
+
+            btn.forEach((Event) => {
+                Event.addEventListener('click', () => {
+                    Event.style.background = Event.innerText;
+                })
+
+            })
+        </script>
+    </div>
+</body>
+
+</html>
